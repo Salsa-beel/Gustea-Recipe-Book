@@ -19,7 +19,7 @@ export class AllRecipesComponent implements OnInit {
     this.service.getAllRecipes().subscribe((res:any)=>{
       this.recipes=res
 
-      // console.log(res)
+      console.log(res)
 
     }
     )
