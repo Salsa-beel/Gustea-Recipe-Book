@@ -1,1 +1,13 @@
-<p>filtering works!</p>
+
+<div class="row justify-content-end me-5">
+
+  <div class="col-md-2">
+
+    <select class="form-select " (change)="filterCategory($event)">
+      <option value="الكل" selected> الكل</option>
+      <option value= "{{option}}" *ngFor="let option of categories">{{option}}</option>
+    </select>
+
+  </div>
+</div>
+
