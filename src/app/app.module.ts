@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
 import { RecipesModule } from './recipes/recipes.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
