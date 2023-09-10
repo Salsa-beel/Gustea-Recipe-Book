@@ -5,7 +5,7 @@
 
     <select class="form-select " (change)="filterCategory($event)">
       <option value="الكل" selected> الكل</option>
-      <option value= "{{option}}" *ngFor="let option of categories">{{option}}</option>
+      <option value= "{{option.id}}" *ngFor= "let option of categories">{{option.name}}</option>
     </select>
 
   </div>

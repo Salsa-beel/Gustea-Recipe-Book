@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipesService } from 'src/app/recipes/services/recipes.service';
+import { SharedService } from 'src/app/shared/service/shared.service';
 
 @Component({
   selector: 'app-legumes-recipes',
@@ -10,7 +11,7 @@ export class LegumesRecipesComponent implements OnInit {
 
   recipes :any[]=[];
 
-  constructor(private service:RecipesService) { }
+  constructor(private service:SharedService) { }
 
   ngOnInit() {
     this.getRecipes();
