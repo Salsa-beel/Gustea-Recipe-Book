@@ -4,10 +4,12 @@ import { AllRecipesComponent } from './components/all-recipes/all-recipes.compon
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { LegumesRecipesComponent } from './components/legumes-recipes/legumes-recipes.component';
 import { ProteinRecipesComponent } from './components/protein-recipes/protein-recipes.component';
+import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 
 const routes: Routes = [
   {path:"home" ,component:LandingPageComponent},
   {path:"all-recipes",component:AllRecipesComponent},
+  {path:"detials/:id",component:RecipeDetailsComponent},
   {path:"protein",component:ProteinRecipesComponent},
   {path:"legumes",component:LegumesRecipesComponent},
   {path:"**",redirectTo:"home",pathMatch:"full"}
