@@ -1,25 +1,30 @@
-<div class="row" >
-  <div class="col-md-12">
+<div class="row " >
+  <div class="col-md-12 col-sm-10" >
 
   <h2 class="mt-5 text-decoration-underline">كل وصفاتنا</h2>
   </div>
+  </div>
 
-    <div class="col-md-2 ms-5 mt-5"  >
-    <div class="card ms-5" style="width: 18rem;" *ngFor="let item of recipes">
-      <img src="assets/images/rice.png" class="card-img-top" alt="...">
+
+
+  <div class="row ms-5">
+    <div class="col-md-3 col-sm-12 me-5 m-5 " *ngFor="let item of legumesRecipe" >
+
+    <div class="card" style="width: 18rem;" >
+      <img src="{{item.url}}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title fs-3">Shawerma | شاورما</h5>
-        <p class="card-text">طريقة عمل سندوتشات شاورما الدجاج مثل المطاعم وأفضل بخطوات بسيطة وسهلة</p>
+        <h5 class="card-title fs-3">{{item.name}}</h5>
+        <p class="card-text ms-5"> تتبعي الخطوات السهلة والناجحة، جربوها, {{item.name}}</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item fs-5">نوع: نشويات</li>
+        <li class="list-group-item fs-5">نوع: بروتين</li>
 
       </ul>
       <div class="card-body text-center">
 
-        <a href="#" class="card-link text-decoration-none">الوصفة</a>
+        <a href="#" class="card-link " routerLink="/details/{{item.id}}" >الوصفة</a>
       </div>
     </div>
   </div>
-    </div>
+  </div>
 

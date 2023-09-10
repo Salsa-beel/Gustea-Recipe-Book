@@ -8,32 +8,22 @@ import { SharedService } from '../../service/shared.service';
   styleUrls: ['./filtering.component.css']
 })
 export class FilteringComponent implements OnInit {
-  recipes:any[]=[];
-  categories:any[]=[];
+  recipes: any[] = [];
+  categories: any[] = [];
 
 
-  constructor(private service:SharedService){}
+  constructor(private service: SharedService) { }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.getCategories();
 
   }
 
 
-  getRecipes(){
-    this.service.getAllRecipes().subscribe((res:any)=>{
-      this.recipes=res
+  getCategories() {
 
-
-
-    }
-    )
-  }
-
-  getCategories(){
-
-    this.service.getAllCategories().subscribe((res:any) =>{
-      this.categories=res
+    this.service.getAllCategories().subscribe((res: any) => {
+      this.categories = res
       // console.log(res)
 
     })
@@ -41,25 +31,36 @@ export class FilteringComponent implements OnInit {
 
 
 
-  filterCategory(event:any){
+  filterCategory(event: any) {
     let value = event.target.value;
 
-    if (value =="الكل"){
+    if (value == "الكل") {
       this.getRecipes()
-    }else{
+    } else {
       this.getRecipeCategory(value)
     }
 
-//  this.getRecipeCategory(value)
-   console.log(value)
+    //  this.getRecipeCategory(value)
+    console.log(value)
   }
 
 
-  getRecipeCategory(keyword:any){
-this.service.getRecipesByCategory(keyword).subscribe((res:any)=>{
- this.recipes = res
 
-})
+  getRecipes() {
+    this.service.getAllRecipes().subscribe((res: any) => {
+      this.recipes = res
+
+
+
+    }
+    )
+  }
+
+  getRecipeCategory(keyword: any) {
+    this.service.getRecipesByCategory(keyword).subscribe((res: any) => {
+      this.recipes = res
+
+    })
 
   }
 }

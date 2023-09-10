@@ -10,3 +10,9 @@ p{
   font-weight: 300;
 
 }
+
+a{font-weight: bolder;
+  color: rgb(208, 63, 63);
+  font-size: 18px;
+  font-family: 'Marhey', cursive;
+}

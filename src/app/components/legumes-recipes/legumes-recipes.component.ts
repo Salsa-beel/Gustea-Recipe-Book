@@ -9,22 +9,21 @@ import { SharedService } from 'src/app/shared/service/shared.service';
 })
 export class LegumesRecipesComponent implements OnInit {
 
-  recipes :any[]=[];
-
+  legumesRecipe!:any[]
   constructor(private service:SharedService) { }
 
   ngOnInit() {
-    this.getRecipes();
+
+    this.getLegumesRecipes();
   }
 
-  getRecipes(){
-    this.service.getAllRecipes().subscribe((res:any)=>{
-      this.recipes=res
+getLegumesRecipes(){
 
-      console.log(res)
+  return this.service.getLegumes().subscribe((res:any)=>{
 
-    }
-    )
-  }
+    this.legumesRecipe=res
+    console.log(this.legumesRecipe)
+  })
+}
 
 }

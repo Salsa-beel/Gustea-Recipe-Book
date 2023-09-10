@@ -9,7 +9,7 @@ import { RecipeDetailsComponent } from './components/recipe-details/recipe-detai
 const routes: Routes = [
   {path:"home" ,component:LandingPageComponent},
   {path:"all-recipes",component:AllRecipesComponent},
-  {path:"detials/:id",component:RecipeDetailsComponent},
+  {path:"details/:id",component:RecipeDetailsComponent},
   {path:"protein",component:ProteinRecipesComponent},
   {path:"legumes",component:LegumesRecipesComponent},
   {path:"**",redirectTo:"home",pathMatch:"full"}

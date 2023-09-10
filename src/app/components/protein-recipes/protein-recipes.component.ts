@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/shared/service/shared.service';
 
 @Component({
   selector: 'app-protein-recipes',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProteinRecipesComponent implements OnInit {
 
-  constructor() { }
+  proteinRecipe!:any[]
+  constructor(private service:SharedService) { }
 
   ngOnInit() {
+
+    this.getProteinRecipes();
   }
+
+getProteinRecipes(){
+
+  return this.service.getProtein().subscribe((res:any)=>{
+
+    this.proteinRecipe=res
+    console.log(this.proteinRecipe)
+  })
+}
 
 }
