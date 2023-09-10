@@ -11,7 +11,7 @@ import { SharedService } from 'src/app/shared/service/shared.service';
 export class AllRecipesComponent implements OnInit {
  recipes :any[]=[];
 
-  constructor(private service:SharedService) { }
+  constructor(private service:RecipesService) { }
 
   ngOnInit() {
     this.getRecipes();

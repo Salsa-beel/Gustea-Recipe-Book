@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { range } from 'rxjs';
+import { RecipesService } from 'src/app/recipes/services/recipes.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  constructor( private service:RecipesService) { }
 
   ngOnInit() {
   }
 
+
+  // getRandom(){
+
+  //   return this.service.getAllRecipes().
+  // }
 }

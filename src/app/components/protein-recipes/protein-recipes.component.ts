@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipesService } from 'src/app/recipes/services/recipes.service';
 import { SharedService } from 'src/app/shared/service/shared.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { SharedService } from 'src/app/shared/service/shared.service';
 export class ProteinRecipesComponent implements OnInit {
 
   proteinRecipe!:any[]
-  constructor(private service:SharedService) { }
+  constructor(private service:RecipesService) { }
 
   ngOnInit() {
 

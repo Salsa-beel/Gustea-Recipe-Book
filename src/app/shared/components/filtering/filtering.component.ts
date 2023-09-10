@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipesService } from 'src/app/recipes/services/recipes.service';
 import { SharedService } from '../../service/shared.service';
 
 
@@ -12,7 +13,7 @@ export class FilteringComponent implements OnInit {
   categories: any[] = [];
 
 
-  constructor(private service: SharedService) { }
+  constructor(private service: SharedService, private recipeService:RecipesService) { }
 
   ngOnInit(): void {
     this.getCategories();
@@ -47,7 +48,7 @@ export class FilteringComponent implements OnInit {
 
 
   getRecipes() {
-    this.service.getAllRecipes().subscribe((res: any) => {
+    this.recipeService.getAllRecipes().subscribe((res: any) => {
       this.recipes = res
 
 
