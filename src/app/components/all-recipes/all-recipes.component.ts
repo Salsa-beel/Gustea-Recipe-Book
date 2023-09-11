@@ -9,24 +9,15 @@ import { SharedService } from 'src/app/shared/service/shared.service';
   styleUrls: ['./all-recipes.component.css']
 })
 export class AllRecipesComponent implements OnInit {
- recipes :any[]=[];
 
   constructor(private service:RecipesService) { }
 
   ngOnInit() {
-    this.getRecipes();
+
 
   }
 
-  getRecipes(){
-    this.service.getAllRecipes().subscribe((res:any)=>{
-      this.recipes=res
 
-
-
-    }
-    )
-  }
 
 
 }

@@ -8,6 +8,7 @@ import { RecipeDetailsComponent } from '../components/recipe-details/recipe-deta
 import { SharedModule } from '../shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { RecipeComponent } from '../components/recipe/recipe.component';
 
 
 
@@ -17,7 +18,8 @@ import { RouterModule } from '@angular/router';
     LandingPageComponent,
     LegumesRecipesComponent,
     ProteinRecipesComponent,
-    RecipeDetailsComponent
+    RecipeDetailsComponent,
+    RecipeComponent
   ],
   imports: [
     CommonModule,
