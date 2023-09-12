@@ -13,15 +13,15 @@ export class RecipesService {
     return this.http.get('http://localhost:3000/recipes')
   }
 
-  getProtein(){
+  // getProtein(){
 
-    return this.http.get('http://localhost:3000/categories/1/recipes')
-  }
+  //   return this.http.get('http://localhost:3000/categories/1/recipes')
+  // }
 
-  getLegumes(){
+  // getLegumes(){
 
-    return this.http.get('http://localhost:3000/categories/2/recipes')
-  }
+  //   return this.http.get('http://localhost:3000/categories/2/recipes')
+  // }
 
 
 }

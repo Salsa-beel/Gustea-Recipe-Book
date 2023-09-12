@@ -14,16 +14,9 @@ export class ProteinRecipesComponent implements OnInit {
 
   ngOnInit() {
 
-    this.getProteinRecipes();
+
   }
 
-getProteinRecipes(){
 
-  return this.service.getProtein().subscribe((res:any)=>{
-
-    this.proteinRecipe=res
-    console.log(this.proteinRecipe)
-  })
-}
 
 }

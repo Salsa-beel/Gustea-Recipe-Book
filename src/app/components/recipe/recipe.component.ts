@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RecipesService } from 'src/app/recipes/services/recipes.service';
+import { SharedService } from 'src/app/shared/service/shared.service';
 
 @Component({
   selector: 'app-recipe',
@@ -8,23 +9,36 @@ import { RecipesService } from 'src/app/recipes/services/recipes.service';
 })
 export class RecipeComponent implements OnInit {
 
-  recipes :any[]=[];
+  recipes: any[] = [];
 
-  constructor(private service:RecipesService) { }
+  @Input()
+  term!: number;
+
+  constructor(private service: RecipesService, private service1: SharedService) { }
 
   ngOnInit() {
     this.getRecipes();
 
   }
 
-  getRecipes(){
-    this.service.getAllRecipes().subscribe((res:any)=>{
-      this.recipes=res
+  getRecipes() {
 
 
 
+    if (this.term == 0) {
+      this.service.getAllRecipes().subscribe((res: any) => {
+        this.recipes = res
+      }
+      )
+
+    } else {
+      this.service1.getRecipesByCategory(this.term).subscribe((res: any) => {
+        this.recipes = res
+
+      })
     }
-    )
+
+
   }
 
 }

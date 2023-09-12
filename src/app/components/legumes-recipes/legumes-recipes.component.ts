@@ -14,16 +14,9 @@ export class LegumesRecipesComponent implements OnInit {
 
   ngOnInit() {
 
-    this.getLegumesRecipes();
+
   }
 
-getLegumesRecipes(){
 
-  return this.service.getLegumes().subscribe((res:any)=>{
-
-    this.recipes=res
-    console.log(this.recipes)
-  })
-}
 
 }
