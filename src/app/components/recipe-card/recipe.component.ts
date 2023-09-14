@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RecipesService } from 'src/app/recipes/services/recipes.service';
+import { RecipesService } from 'src/app/recipes-service/services/recipes.service';
 import { SharedService } from 'src/app/shared/service/shared.service';
-
+import { Recipe } from 'src/app/Model/recipes';
+import { Category } from 'src/app/Model/category';
 @Component({
   selector: 'app-recipe',
   templateUrl: './recipe.component.html',
@@ -9,10 +10,11 @@ import { SharedService } from 'src/app/shared/service/shared.service';
 })
 export class RecipeComponent implements OnInit {
 
-  recipes: any[] = [];
+  recipes: Recipe[] = [];
 
   @Input()
   term!: number;
+  categoryId!:Category;
 
   constructor(private service: RecipesService, private service1: SharedService) { }
 
@@ -22,7 +24,6 @@ export class RecipeComponent implements OnInit {
   }
 
   getRecipes() {
-
 
 
     if (this.term == 0) {
@@ -40,5 +41,20 @@ export class RecipeComponent implements OnInit {
 
 
   }
+
+
+//   getCategory(){
+
+//     if(this.categoryId == 1){
+//     this.service1.getRecipesByCategory(this.categoryId).subscribe((res:any)=>{
+
+//       this.recipes=res
+//     }
+//     )
+
+//   }else {
+
+//   }
+// }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SharedService } from 'src/app/shared/service/shared.service';
+import { Recipe } from 'src/app/Model/recipes';
 
 
 @Component({
@@ -10,12 +11,12 @@ import { SharedService } from 'src/app/shared/service/shared.service';
 })
 export class RecipeDetailsComponent implements OnInit {
   id:any;
-  Recipe: any=[]
+  Recipe!: Recipe;
 
   constructor( private service:SharedService, private route:ActivatedRoute) {
 
   this.id= this.route.snapshot.paramMap.get("id")
-  console.log(this.id)
+  // console.log(this.id)
    }
 
   ngOnInit() {

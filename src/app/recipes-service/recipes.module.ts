@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AllRecipesComponent } from '../components/all-recipes/all-recipes.component';
-import { LandingPageComponent } from '../components/landing-page/landing-page.component';
-import { LegumesRecipesComponent } from '../components/legumes-recipes/legumes-recipes.component';
-import { ProteinRecipesComponent } from '../components/protein-recipes/protein-recipes.component';
-import { RecipeDetailsComponent } from '../components/recipe-details/recipe-details.component';
+import { AllRecipesComponent } from '../Components/all-recipes/all-recipes.component';
+import { LandingPageComponent } from '../Components/landing-page/landing-page.component';
+import { LegumesRecipesComponent } from '../Components/legumes-recipes/legumes-recipes.component';
+import { ProteinRecipesComponent } from '../Components/protein-recipes/protein-recipes.component';
+import { RecipeDetailsComponent } from '../Components/recipe-details/recipe-details.component';
 import { SharedModule } from '../shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { RecipeComponent } from '../components/recipe/recipe.component';
+import { RecipeComponent } from '../Components/recipe-card/recipe.component';
 
 
 

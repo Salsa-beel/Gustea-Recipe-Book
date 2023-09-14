@@ -17,3 +17,10 @@
   .main-nav{
     background-color: rgb(223, 205, 190);
   }
+
+  h1{
+    text-align: center;
+    font-size: 100px;
+    color: darksalmon;
+    font-family: 'Amatic SC', cursive;
+    }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { range } from 'rxjs';
-import { RecipesService } from 'src/app/recipes/services/recipes.service';
+import { RecipesService } from 'src/app/recipes-service/services/recipes.service';
 
 @Component({
   selector: 'app-landing-page',

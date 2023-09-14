@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipesService } from 'src/app/recipes/services/recipes.service';
+import { RecipesService } from 'src/app/recipes-service/services/recipes.service';
 import { SharedService } from 'src/app/shared/service/shared.service';
 
 
@@ -10,7 +10,8 @@ import { SharedService } from 'src/app/shared/service/shared.service';
 })
 export class AllRecipesComponent implements OnInit {
 
-  constructor(private service:RecipesService) { }
+
+  constructor() { }
 
   ngOnInit() {
 

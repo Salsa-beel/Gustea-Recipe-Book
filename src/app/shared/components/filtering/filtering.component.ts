@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipesService } from 'src/app/recipes/services/recipes.service';
+import { Category } from 'src/app/Model/category';
+import { Recipe } from 'src/app/Model/recipes';
+import { RecipesService } from 'src/app/recipes-service/services/recipes.service';
 import { SharedService } from '../../service/shared.service';
 
 
@@ -9,8 +11,8 @@ import { SharedService } from '../../service/shared.service';
   styleUrls: ['./filtering.component.css']
 })
 export class FilteringComponent implements OnInit {
-  recipes: any[] = [];
-  categories: any[] = [];
+  recipes: Recipe[] = [];
+  categories: Category[] = [];
 
 
   constructor(private service: SharedService, private recipeService:RecipesService) { }
