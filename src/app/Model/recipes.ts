@@ -1,20 +1,24 @@
 
- export interface Rec{
+ export class Recipe{
 
-  // "id":"1",
-  // "name": "ساندويش الستيك بالجبن",
-  // "url": "/assets/images/sand1.png",
-  // "description": " أطيب وأسهل طريقة لعمل ساندويشات بلحم الستيك وبطعم الجبنة الرائعة، تتبعي الخطوات السهلة والناجحة، جربوها الآن",
-  // "author": "author1",
-  // "ingrediants":
-
-  id: number,
-  name:string,
-  url:File,
-  description : string[],
-  author: string,
-  ingrediants: string[],
-  method: string[],
+  id: number;
+  name:string;
+  url:string;
+  description: string[];
+  author: string;
+  ingrediants: string[];
+  method: string[];
   categoryId: number
+
+constructor(Id:number,Name:string, Desc:string[],Url:string,Author:string,Ingrd:string[],Method:string[],CategId:number){
+  this.id=Id;
+  this.name=Name;
+  this.description=Desc;
+  this.url=Url;
+  this.author=Author;
+  this.ingrediants=Ingrd;
+  this.method=Method;
+  this.categoryId=CategId;
+}
 
  }
