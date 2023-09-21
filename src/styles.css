@@ -11,4 +11,20 @@
   box-sizing: border-box;
 }
 
+.ngx-pagination {
+  padding-left: 0px !important;
+  color: rgb(4, 5, 5);
+  border-radius: 50px !important;
+}
 
+.ngx-pagination .current {
+  background: #d5b484f1 !important;
+  border: 2px solid #312515;
+  border-radius: 50% !important;
+}
+
+.ngx-pagination a:hover {
+  background: #d5b484f1 !important;
+  border: 2px solid #312515;
+  border-radius: 50% !important;
+}

@@ -12,6 +12,7 @@ import { SharedService } from '../../service/shared.service';
 })
 export class FilteringComponent implements OnInit {
   recipes: Recipe[] = [];
+
   categories: Category[] = [];
 
 

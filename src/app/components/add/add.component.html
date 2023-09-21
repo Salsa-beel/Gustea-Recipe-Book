@@ -1,54 +1,92 @@
 
-
-<div class="row mt-5 ">
-  <div class="col-md-1 "></div>
+<div class="row mt-5">
+  <div class="col-md-1"></div>
   <div class="col-md-6">
-    <div class="card w-100 h-100" >
+    <div class="card w-100 h-100">
       <div class="row">
         <div class="col-md-4">
-          <img src="assets/images/aish.png" class="img-fluid rounded-start h-75 mt-5 ms-4" alt="...">
+          <img
+            src="{{ base64 }}"
+            class="img-fluid rounded-start h-75 mt-3 ms-4"
+            alt="..."
+          />
         </div>
         <div class="col-md-6">
           <div class="card-body mt-2">
-            <h4 class="card-title fw-bold ">المكونات</h4>
+            <h4 class="card-title fw-bold">المكونات</h4>
 
+            <div class=""></div>
 
-
-              <div class=""></div>
-
-
-            <h4 class="card-text "><span class="fw-bold justify-content-start mt-2"></span>الطريقة</h4>
-            <p class="card-text "><small><span class="fw-bold mt-5"></span>  </small></p>
+            <h4 class="card-text">
+              <span class="fw-bold justify-content-start mt-2"></span>الطريقة
+            </h4>
+            <p class="card-text">
+              <small><span class="fw-bold mt-5"></span> </small>
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- <div class="row justify-content-center ms-5">
 
-
-  </div> -->
-
-
-  <div class="col-md-4">
-
+  <div class="col-md-4" [formGroup]="form">
     <div class="mb-2">
-      <label for="formFile" class="form-label">صورة</label>
-      <input class="form-control" type="file" id="formFile">
+
+
+<!-- Recipe Name input -->
+      <label for="name" class="form-label">اسم الوصفة</label>
+
+      <input type="text" class="form-control" id="name" formControlName="name" placeholder="اسم الوصفة">
+
+      <!-- Recipe ingrediants input -->
+      <label for="ingrediants" class="form-label">المكونات</label>
+
+      <input type="text" class="form-control" id="ingrediants" formControlName="ingrediants" placeholder="المكونات">
+
+      <!-- Recipe method input -->
+      <label for="method" class="form-label">الطريقة</label>
+
+      <input type="text" class="form-control" id="method" formControlName="method" placeholder="الطريقة">
+
+
+
+
+
+<!-- image input -->
+      <label for="url" class="form-label">صورة</label>
+
+      <input
+        class="form-control"
+        formControlName="url"
+        type="file"
+        id="url"
+        (change)="getImagePath($event)"
+      />
     </div>
 
-    <label for="exampleDataList" class="form-label">Datalist example</label>
-<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-<datalist id="datalistOptions">
-<option value="San Francisco">
-<option value="New York">
-<option value="Seattle">
-<option value="Los Angeles">
-<option value="Chicago">
-</datalist>
+
+<!-- category input -->
+    <label for="category" class="form-label">نوع الاكلة</label>
+    <input class="form-control"
+      formControlName="categoryId"
+      list="datalistOptions"
+      id="categoryId"
+      placeholder="النوع"/>
+
+    <datalist id="datalistOptions" >
+      <option value={{item.id}} *ngFor="let item of categories">{{item.name}}</option>
+    </datalist>
+
+
+
+<!-- Add Recipe Button -->
+
+    <button type="button" [disabled]="!form.valid" class="btn btn-lg border rounded-5 mt-3" (click)="addRecipe()">
+      ضيف الوصفة
+    </button>
+
+
 
   </div>
-
-
 </div>

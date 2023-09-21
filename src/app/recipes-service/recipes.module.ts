@@ -9,7 +9,10 @@ import { SharedModule } from '../shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { RecipeComponent } from '../Components/recipe-card/recipe.component';
-
+import { ShoppingListComponent } from '../Components/shopping-list/shopping-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddComponent } from '../Components/add/add.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -19,12 +22,17 @@ import { RecipeComponent } from '../Components/recipe-card/recipe.component';
     LegumesRecipesComponent,
     ProteinRecipesComponent,
     RecipeDetailsComponent,
-    RecipeComponent
+    RecipeComponent,
+    ShoppingListComponent,
+    AddComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxPaginationModule
 
   ]
 })

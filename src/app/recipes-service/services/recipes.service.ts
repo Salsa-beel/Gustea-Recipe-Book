@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SharedService } from 'src/app/shared/service/shared.service';
-
+import { FormBuilder, FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
 export class RecipesService {
+  base64:any;
 
   constructor( private http:HttpClient) { }
 
@@ -13,15 +14,11 @@ export class RecipesService {
     return this.http.get('http://localhost:3000/recipes')
   }
 
-  // getProtein(){
 
-  //   return this.http.get('http://localhost:3000/categories/1/recipes')
-  // }
+  createRecipe(model:any){
 
-  // getLegumes(){
-
-  //   return this.http.get('http://localhost:3000/categories/2/recipes')
-  // }
+    return this.http.post('http://localhost:3000/recipes',model)
+  }
 
 
 }

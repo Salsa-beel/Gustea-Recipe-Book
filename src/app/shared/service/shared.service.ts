@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +27,9 @@ export class SharedService {
 
 
 
+  getpagebooks(page: number) {
 
+    return this.http.get('http://localhost:3000/' + '?page=' + page);
+  }
 }
 
