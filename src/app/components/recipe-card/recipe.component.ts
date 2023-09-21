@@ -11,15 +11,23 @@ import { Category } from 'src/app/Model/category';
 export class RecipeComponent implements OnInit {
 
   recipes: Recipe[] = [];
-
+  categories!: Category[];
   @Input()
   term!: number;
   categoryId!:Category;
+  form: any;
+
+
+  data: any; // for pagination
+  alldata: number = 0; // for pagination
+  pagination: number = 1; // for pagination
+
 
   constructor(private service: RecipesService, private service1: SharedService) { }
 
   ngOnInit() {
     this.getRecipes();
+
 
   }
 
@@ -41,20 +49,30 @@ export class RecipeComponent implements OnInit {
 
 
   }
+  updateRecipe(item:Recipe){
+    this.form.get('url')?.setValue(item.url)
+    this.form.get('name')?.setValue(item.name)
+    this.form.get('ingrediants')?.setValue(item.ingrediants)
+    this.form.get('method')?.setValue(item.method)
+    this.form.get('categoryId')?.setValue(item.categoryId)
 
 
-//   getCategory(){
 
-//     if(this.categoryId == 1){
-//     this.service1.getRecipesByCategory(this.categoryId).subscribe((res:any)=>{
+  }
+  //  =======Pagination========
 
-//       this.recipes=res
-//     }
-//     )
 
-//   }else {
+  fetchbooks() {
+    this.service1.getpagebooks(this.pagination).subscribe((res: any) => {
+      this.data = res.data;
+      this.alldata = res.total;
+      console.log(res.total);
+    });
+  }
+  renderPage(event: number) {
+    this.pagination = event;
+    this.fetchbooks();
+  }
 
-//   }
-// }
 
 }

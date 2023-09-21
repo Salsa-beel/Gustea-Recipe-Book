@@ -63,9 +63,17 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 col-sm-10">
       <h3 class="fs-1 text-decoration-underline"> اشهر الوصفات</h3>
     </div>
+
+
+      <app-filtering></app-filtering>
+
+
+      <app-recipe [term]="0"></app-recipe>
+
+
 
   </div>
 </div>
