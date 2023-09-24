@@ -20,5 +20,9 @@ export class RecipesService {
     return this.http.post('http://localhost:3000/recipes',model)
   }
 
+  deleteRecipe(id:number){
+    return this.http.delete('http://localhost:3000/recipes/' + id)
+  }
+
 
 }

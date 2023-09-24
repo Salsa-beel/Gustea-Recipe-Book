@@ -17,6 +17,7 @@ export class AddComponent implements OnInit {
   form!: FormGroup
 
   categories!: Category[];
+  router: any;
   constructor(private build: FormBuilder, private sharservice: SharedService , private recipeService:RecipesService) {
 
   }
@@ -61,19 +62,21 @@ export class AddComponent implements OnInit {
 
    this.recipeService.createRecipe(model).subscribe(res => {
      alert( "تم أضافة الوصفة" )
+     window.location.reload()
    })
-  }
-
-  updateRecipe(item:Recipe){
-    this.form.get('url')?.setValue(item.url)
-    this.form.get('name')?.setValue(item.name)
-    this.form.get('ingrediants')?.setValue(item.ingrediants)
-    this.form.get('method')?.setValue(item.method)
-    this.form.get('categoryId')?.setValue(item.categoryId)
-
-
 
   }
+
+  // updateRecipe(item:Recipe){
+  //   this.form.get('url')?.setValue(item.url)
+  //   this.form.get('name')?.setValue(item.name)
+  //   this.form.get('ingrediants')?.setValue(item.ingrediants)
+  //   this.form.get('method')?.setValue(item.method)
+  //   this.form.get('categoryId')?.setValue(item.categoryId)
+
+
+
+  // }
 
 }
 

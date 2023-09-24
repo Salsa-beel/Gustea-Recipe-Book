@@ -3,6 +3,7 @@ import { RecipesService } from 'src/app/recipes-service/services/recipes.service
 import { SharedService } from 'src/app/shared/service/shared.service';
 import { Recipe } from 'src/app/Model/recipes';
 import { Category } from 'src/app/Model/category';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-recipe',
   templateUrl: './recipe.component.html',
@@ -12,21 +13,29 @@ export class RecipeComponent implements OnInit {
 
   recipes: Recipe[] = [];
   categories!: Category[];
+
   @Input()
   term!: number;
   categoryId!:Category;
-  form: any;
+  form!: FormGroup
 
 
   data: any; // for pagination
   alldata: number = 0; // for pagination
   pagination: number = 1; // for pagination
+  base64: any;
 
 
-  constructor(private service: RecipesService, private service1: SharedService) { }
+
+
+
+  constructor(private service: RecipesService, private service1: SharedService, private build:FormBuilder) { }
 
   ngOnInit() {
+
+
     this.getRecipes();
+
 
 
   }
@@ -49,16 +58,16 @@ export class RecipeComponent implements OnInit {
 
 
   }
-  updateRecipe(item:Recipe){
-    this.form.get('url')?.setValue(item.url)
-    this.form.get('name')?.setValue(item.name)
-    this.form.get('ingrediants')?.setValue(item.ingrediants)
-    this.form.get('method')?.setValue(item.method)
-    this.form.get('categoryId')?.setValue(item.categoryId)
-
-
+  deleteRecipe(id:number){
+    this.service.deleteRecipe(id).subscribe(res => {
+      this.service.getAllRecipes();
+      alert ('تم مسح  الوصفة')
+      window.location.reload()
+    })
 
   }
+
+
   //  =======Pagination========
 
 
@@ -73,6 +82,7 @@ export class RecipeComponent implements OnInit {
     this.pagination = event;
     this.fetchbooks();
   }
+
 
 
 }

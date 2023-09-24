@@ -7,6 +7,7 @@ import { LegumesRecipesComponent } from './Components/legumes-recipes/legumes-re
 import { ProteinRecipesComponent } from './Components/protein-recipes/protein-recipes.component';
 import { RecipeDetailsComponent } from './Components/recipe-details/recipe-details.component';
 import { ShoppingListComponent } from './Components/shopping-list/shopping-list.component';
+import { UpdateComponent } from './Components/update/update.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:"protein",component:ProteinRecipesComponent},
   {path:"legumes",component:LegumesRecipesComponent},
   {path:"shopping",component:ShoppingListComponent},
+  {path:"update",component:UpdateComponent},
   {path:"add",component:AddComponent},
 
   {path:"**",redirectTo:"home",pathMatch:"full"}

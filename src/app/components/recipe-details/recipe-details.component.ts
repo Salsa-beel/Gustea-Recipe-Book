@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SharedService } from 'src/app/shared/service/shared.service';
 import { Recipe } from 'src/app/Model/recipes';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Category } from 'src/app/Model/category';
 
 
 @Component({
@@ -10,25 +12,36 @@ import { Recipe } from 'src/app/Model/recipes';
   styleUrls: ['./recipe-details.component.css']
 })
 export class RecipeDetailsComponent implements OnInit {
-  id:any;
+  id: any;;
   Recipe!: Recipe;
 
-  constructor( private service:SharedService, private route:ActivatedRoute) {
+  // form!:FormGroup;
+  // base64!:any;
+  categories!: Category[];
 
-  this.id= this.route.snapshot.paramMap.get("id")
-  // console.log(this.id)
-   }
+  constructor(private service: SharedService, private route: ActivatedRoute) {
+
+    this.id = this.route.snapshot.paramMap.get("id")
+    // console.log(this.id)
+  }
 
   ngOnInit() {
+
     this.getRecipeDetails()
+
+
+
   }
 
-  getRecipeDetails(){
+  getRecipeDetails() {
 
-    return this.service.getRecipeById(this.id).subscribe((res:any)=>{
-      this.Recipe=res
+    return this.service.getRecipeById(this.id).subscribe((res: any) => {
+      this.Recipe = res
       // console.log(this.Recipe)
 
-})
+    })
   }
+
+
+
 }
