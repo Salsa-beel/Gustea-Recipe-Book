@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Category } from 'src/app/Model/category';
 import { RecipesService } from 'src/app/recipes-service/services/recipes.service';
 import { SharedService } from 'src/app/shared/service/shared.service';
 import { Recipe } from 'src/app/Model/recipes';
+import { ActivatedRoute } from '@angular/router';
+import { Ingrediants } from 'src/app/Model/ingrediants';
 
 @Component({
   selector: 'app-update',
@@ -15,9 +17,15 @@ export class UpdateComponent implements OnInit {
   base64!: any;
   recipe: any
 
-  constructor(private service: RecipesService, private service1: SharedService, private build:FormBuilder) { }
+  constructor(private service: RecipesService, private service1: SharedService, private build:FormBuilder, private route: ActivatedRoute) {
+
+    this.id = this.route.snapshot.paramMap.get("id")
+   }
 
   form!:FormGroup
+
+  id: any;
+  Recipe!: Recipe;
 
   ngOnInit() {
 
@@ -33,6 +41,9 @@ export class UpdateComponent implements OnInit {
     })
 
     this.getCategory();
+    this.getRecipeDetails()
+
+
   }
 
 
@@ -59,17 +70,33 @@ export class UpdateComponent implements OnInit {
   }
 
 
-  updateRecipe(recipe:any){
-    this.form.get('url')?.setValue(recipe.url)
-    this.form.get('name')?.setValue(recipe.name)
-    this.form.get('ingrediants')?.setValue(recipe.ingrediants)
-    this.form.get('method')?.setValue(recipe.method)
-    this.form.get('categoryId')?.setValue(recipe.categoryId)
-    this.base64=recipe.url
 
-    console.log(recipe);
+  getRecipeDetails() {
 
+    return this.service1.getRecipeById(this.id).subscribe((res: any) => {
+      this.form = new FormGroup({
+        url: new FormControl(res['url']),
+        name: new FormControl(res['name']),
+        ingrediants: new FormControl(res['ingrediants']),
+        method: new FormControl(res['method']),
+        categoryId: new FormControl(res['categoryId'])
+
+      })
+      this.base64=this.form.get('url')?.value;
+       console.log(this.form)
+
+    })
   }
 
+
+  updateRecipe(){
+
+    this.service1.updateRecipes(this.id,this.form.value).subscribe((res => {
+
+      alert( "تم تعديل الوصفة" )
+      window.location.reload()
+    }))
+
+  }
 
 }

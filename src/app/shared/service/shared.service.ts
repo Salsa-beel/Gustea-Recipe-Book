@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
+import { Recipe } from 'src/app/Model/recipes';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,10 @@ export class SharedService {
   getpagebooks(page: number) {
 
     return this.http.get('http://localhost:3000/' + '?page=' + page);
+  }
+
+  updateRecipes(id:number,data:Recipe){
+    return this.http.put('http://localhost:3000/recipes/'+ id ,data)
   }
 }
 

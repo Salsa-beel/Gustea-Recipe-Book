@@ -12,7 +12,7 @@ import { Category } from 'src/app/Model/category';
   styleUrls: ['./recipe-details.component.css']
 })
 export class RecipeDetailsComponent implements OnInit {
-  id: any;;
+  id: any;
   Recipe!: Recipe;
 
   // form!:FormGroup;

@@ -9,6 +9,7 @@
   ingrediants: string[];
   method: string[];
   categoryId: number
+base64: any;
 
 constructor(Id:number,Name:string, Desc:string[],Url:string,Author:string,Ingrd:string[],Method:string[],CategId:number){
   this.id=Id;

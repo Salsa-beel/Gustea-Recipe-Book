@@ -17,7 +17,7 @@ const routes: Routes = [
   {path:"protein",component:ProteinRecipesComponent},
   {path:"legumes",component:LegumesRecipesComponent},
   {path:"shopping",component:ShoppingListComponent},
-  {path:"update",component:UpdateComponent},
+  {path:"update/:id",component:UpdateComponent},
   {path:"add",component:AddComponent},
 
   {path:"**",redirectTo:"home",pathMatch:"full"}
