@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddComponent } from '../Components/add/add.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { UpdateComponent } from '../Components/update/update.component';
+import { UserComponent } from '../Components/user/user.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { UpdateComponent } from '../Components/update/update.component';
     RecipeComponent,
     ShoppingListComponent,
     AddComponent,
-    UpdateComponent
+    UpdateComponent,
+    UserComponent
   ],
   imports: [
     CommonModule,

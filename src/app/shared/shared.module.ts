@@ -15,7 +15,6 @@ import { BrowserModule } from '@angular/platform-browser';
     HeaderComponent,
     FooterComponent,
     FilteringComponent,
-
     SearchBarComponent
   ],
   imports: [

@@ -8,6 +8,7 @@ import { ProteinRecipesComponent } from './Components/protein-recipes/protein-re
 import { RecipeDetailsComponent } from './Components/recipe-details/recipe-details.component';
 import { ShoppingListComponent } from './Components/shopping-list/shopping-list.component';
 import { UpdateComponent } from './Components/update/update.component';
+import { UserComponent } from './Components/user/user.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:"shopping",component:ShoppingListComponent},
   {path:"update/:id",component:UpdateComponent},
   {path:"add",component:AddComponent},
+  {path:"user",component:UserComponent},
 
   {path:"**",redirectTo:"home",pathMatch:"full"}
 ];
