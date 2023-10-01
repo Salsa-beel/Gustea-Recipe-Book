@@ -6,6 +6,7 @@ import { LandingPageComponent } from './Components/landing-page/landing-page.com
 import { LegumesRecipesComponent } from './Components/legumes-recipes/legumes-recipes.component';
 import { ProteinRecipesComponent } from './Components/protein-recipes/protein-recipes.component';
 import { RecipeDetailsComponent } from './Components/recipe-details/recipe-details.component';
+import { RegisterComponent } from './Components/register/register.component';
 import { ShoppingListComponent } from './Components/shopping-list/shopping-list.component';
 import { UpdateComponent } from './Components/update/update.component';
 import { UserComponent } from './Components/user/user.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path:"shopping",component:ShoppingListComponent},
   {path:"update/:id",component:UpdateComponent},
   {path:"add",component:AddComponent},
-  {path:"user",component:UserComponent},
+  {path:"register",component:RegisterComponent},
+  {path:"login",component:UserComponent},
 
   {path:"**",redirectTo:"home",pathMatch:"full"}
 ];

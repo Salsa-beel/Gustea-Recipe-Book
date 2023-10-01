@@ -15,6 +15,8 @@ import { AddComponent } from '../Components/add/add.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { UpdateComponent } from '../Components/update/update.component';
 import { UserComponent } from '../Components/user/user.component';
+import { RegisterComponent } from '../Components/register/register.component';
+
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { UserComponent } from '../Components/user/user.component';
     ShoppingListComponent,
     AddComponent,
     UpdateComponent,
-    UserComponent
+    UserComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +39,8 @@ import { UserComponent } from '../Components/user/user.component';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+
 
   ]
 })
