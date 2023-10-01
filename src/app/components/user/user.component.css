@@ -18,9 +18,10 @@ h1{
   p,a{
     font-size: 18px;
     font-family: 'Aref Ruqaa', cursive;
+    color: #393f81;
 
   }
-  form{
+  form,input{
 
     direction: rtl;
   }
