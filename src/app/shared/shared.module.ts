@@ -8,6 +8,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { ForgotMyPasswordComponent } from './components/forgot-my-password/forgot-my-password.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { BrowserModule } from '@angular/platform-browser';
     HeaderComponent,
     FooterComponent,
     FilteringComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    ForgotMyPasswordComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,
@@ -27,8 +31,9 @@ import { BrowserModule } from '@angular/platform-browser';
     HeaderComponent,
     FooterComponent,
     FilteringComponent,
-
-    SearchBarComponent
+    ForgotMyPasswordComponent,
+    SearchBarComponent,
+    NotFoundComponent
   ]
 })
 export class SharedModule { }
