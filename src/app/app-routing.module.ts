@@ -27,6 +27,7 @@ const routes: Routes = [
   {path:"forgot-password",component:ForgotMyPasswordComponent},
   {path:"login",component:UserComponent},
   {path:"**",component:NotFoundComponent},
+  {path:"",redirectTo:'/login',pathMatch:'full'}
 
   // {path:"**",redirectTo:"home",pathMatch:"full"}
 ];
