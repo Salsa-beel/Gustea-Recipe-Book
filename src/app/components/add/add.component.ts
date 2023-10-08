@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CheckboxControlValueAccessor, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Category } from 'src/app/Model/category';
 import { Recipe } from 'src/app/Model/recipes';
 import { RecipesService } from 'src/app/recipes-service/services/recipes.service';
@@ -17,8 +18,8 @@ export class AddComponent implements OnInit {
   form!: FormGroup
 
   categories!: Category[];
-  router: any;
-  constructor(private build: FormBuilder, private sharservice: SharedService , private recipeService:RecipesService) {
+
+  constructor(private build: FormBuilder, private sharservice: SharedService , private recipeService:RecipesService, private router:Router) {
 
   }
 
@@ -62,21 +63,13 @@ export class AddComponent implements OnInit {
 
    this.recipeService.createRecipe(model).subscribe(res => {
      alert( "تم أضافة الوصفة" )
-     window.location.reload()
+     this.form.reset()
+     this.router.navigate(['home']);
    })
 
   }
 
-  // updateRecipe(item:Recipe){
-  //   this.form.get('url')?.setValue(item.url)
-  //   this.form.get('name')?.setValue(item.name)
-  //   this.form.get('ingrediants')?.setValue(item.ingrediants)
-  //   this.form.get('method')?.setValue(item.method)
-  //   this.form.get('categoryId')?.setValue(item.categoryId)
 
-
-
-  // }
 
 }
 
