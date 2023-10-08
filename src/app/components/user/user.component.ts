@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { NgModel, Validators } from '@angular/forms';
 import { FormGroup,FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/recipes-service/services/auth.service';
@@ -13,15 +13,18 @@ export class UserComponent implements OnInit {
 
   public loginForm!:FormGroup
 
+
   constructor(private authService :AuthService , private formBuilder:FormBuilder , private router:Router) { }
 
   ngOnInit() {
 
     this.loginForm=this.formBuilder.group(
       {
-        email:[''],
-        password:['']
+        email:['',Validators.required],
+        password:['',Validators.required]
+
       }
+
 
 
     )
@@ -55,6 +58,8 @@ login(){
       this.router.navigate(['home'])
     } else {
       alert('ليس لديك حساب')
+      this.loginForm.reset();
+      this.router.navigate(['register'])
     }
 
   },error=>{

@@ -1,0 +1,36 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+
+*{
+  direction: rtl;
+
+}
+.card-body{
+  background-color: rgba(236, 209, 174, 0.275);
+}
+label{
+
+  font-size: 20px;
+  font-family: 'Aref Ruqaa', cursive;
+}
+
+.btn{
+  background-color: #dec094f1;
+  color:rgb(31, 11, 4);
+
+}
+
+.btn:hover{
+
+  background-color: #4d330df1;
+  color:rgb(240, 234, 231);
+}
+
+h3{
+  text-align: center;
+  font-size: 55px;
+  color: rgb(42, 23, 16);
+  font-family: 'Aref Ruqaa', cursive;
+  }

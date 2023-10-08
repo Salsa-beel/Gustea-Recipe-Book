@@ -18,10 +18,15 @@ h1{
   p,a{
     font-size: 18px;
     font-family: 'Aref Ruqaa', cursive;
-    color: #393f81;
+    color: #814539;
 
   }
   form,input{
 
     direction: rtl;
+  }
+  .btn:hover{
+
+    background-color: #e99f4f90;
+    color:rgb(24, 23, 23);
   }

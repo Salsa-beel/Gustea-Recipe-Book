@@ -17,19 +17,18 @@
                 </div>
 
 
-                  <form [formGroup]="loginForm"  >
-
-
-
+                  <form [formGroup]="loginForm" >
                     <div class="form-outline text-center  mb-4">
-                      <label class="form-label" for="form2Example17" >دخل الايميل</label>
-                      <input type="email"  class="form-control form-control-lg" required formControlName="email" />
-
+                      <label class="form-label" for="em" >دخل الايميل</label>
+                      <input type="email"  id="em" class="form-control form-control-lg mb-3 mt-2" required formControlName="email" />
+                      <span class="text-danger " *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">برجاء كتابة البريد الالكتروني</span>
+                        <!-- loginForm.controls['email'].pristine shows the error before writing  -->
                     </div>
 
                     <div class="form-outline text-center mb-4">
-                      <label class="form-label " for="form2Example27" >دخل كلمة السر</label>
-                      <input type="password" id="form2Example27" class="form-control form-control-lg" required formControlName="password"/>
+                      <label class="form-label " for="pass" >دخل كلمة السر</label>
+                      <input type="password" id="pass" class="form-control form-control-lg mb-3 mt-2" required formControlName="password"/>
+                      <span class="text-danger " *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">برجاء كتابة كلمة السر</span>
 
                     </div>
 
@@ -37,7 +36,7 @@
                       <button [disabled]="!loginForm.valid" (click)="login()" class="btn btn-dark btn-lg btn-block" type="button">دخول</button>
                     </div>
 
-                    <a class="small text-muted ali " href="#!"><p class="small text-center">مش فاكر كلمة الدخول؟</p></a>
+                    <a class="small text-muted ali " routerLink="/forgot-password"><p class="small text-center">مش فاكر كلمة الدخول؟</p></a>
                     <p class="mb-5  text-center ">معنديش حساب <a href="#!"
                         routerLink="/register">سجل من هنا</a></p>
                     <a href="#!" class="small text-muted">الشروط و الاحكام</a>

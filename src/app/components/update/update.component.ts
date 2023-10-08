@@ -4,7 +4,7 @@ import { Category } from 'src/app/Model/category';
 import { RecipesService } from 'src/app/recipes-service/services/recipes.service';
 import { SharedService } from 'src/app/shared/service/shared.service';
 import { Recipe } from 'src/app/Model/recipes';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Ingrediants } from 'src/app/Model/ingrediants';
 
 @Component({
@@ -17,7 +17,7 @@ export class UpdateComponent implements OnInit {
   base64!: any;
   recipe: any
 
-  constructor(private service: RecipesService, private service1: SharedService, private build:FormBuilder, private route: ActivatedRoute) {
+  constructor(private service: RecipesService, private service1: SharedService, private build:FormBuilder, private route: ActivatedRoute, private router:Router) {
 
     this.id = this.route.snapshot.paramMap.get("id")
    }
@@ -94,7 +94,8 @@ export class UpdateComponent implements OnInit {
     this.service1.updateRecipes(this.id,this.form.value).subscribe((res => {
 
       alert( "تم تعديل الوصفة" )
-      window.location.reload()
+      this.form.reset();
+      this.router.navigate(['home'])
     }))
 
   }
