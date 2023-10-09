@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { baseUrl } from 'src/app/environments/environment';
 
 
 
@@ -30,12 +31,12 @@ constructor( private formBuilder:FormBuilder, private http:HttpClient) { }
 
 createUser(model:any){
 
-  return this.http.post('http://localhost:3000/signupUser',model);
+  return this.http.post(`${baseUrl}/signupUser`,model);
 }
 
 
 loginUser(){
 
-  return this.http.get<any>('http://localhost:3000/signupUser');
+  return this.http.get<any>(`${baseUrl}/signupUser`);
 }
 }

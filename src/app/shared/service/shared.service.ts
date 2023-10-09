@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
+import { baseUrl } from 'src/app/environments/environment';
 import { Recipe } from 'src/app/Model/recipes';
 
 @Injectable({
@@ -13,28 +14,28 @@ export class SharedService {
 
   getAllCategories() {
 
-    return this.http.get('http://localhost:3000/categories')
+    return this.http.get(`${baseUrl}/categories`)
   }
 
   getRecipesByCategory(keyword: number) {
 
-    return this.http.get('http://localhost:3000/categories/' + keyword + '/recipes')
+    return this.http.get(`${baseUrl}/categories/` + keyword + '/recipes')
   }
 
   // For recipe details
   getRecipeById(id: number) {
-    return this.http.get('http://localhost:3000/recipes/' + id)
+    return this.http.get(`${baseUrl}/recipes/` + id)
   }
 
 
 
   getpagebooks(page: number) {
 
-    return this.http.get('http://localhost:3000/' + '?page=' + page);
+    return this.http.get(`${baseUrl}/` + '?page=' + page);
   }
 
   updateRecipes(id:number,data:Recipe){
-    return this.http.put('http://localhost:3000/recipes/'+ id ,data)
+    return this.http.put(`${baseUrl}/recipes/`+ id ,data)
   }
 }
 
