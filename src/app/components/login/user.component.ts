@@ -55,6 +55,7 @@ login(){
     if (user){
       alert('تم الدخول بنجاح');
       this.loginForm.reset();
+      console.log(user)
       this.router.navigate(['home'])
     } else {
       alert('ليس لديك حساب')
@@ -66,8 +67,11 @@ login(){
     alert('حدث خطأ')
   }
 
+
   )
+
 }
+
 
 
   }

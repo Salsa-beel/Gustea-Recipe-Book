@@ -9,7 +9,7 @@ import { RecipeDetailsComponent } from './Components/recipe-details/recipe-detai
 import { RegisterComponent } from './Components/register/register.component';
 import { ShoppingListComponent } from './Components/shopping-list/shopping-list.component';
 import { UpdateComponent } from './Components/update/update.component';
-import { UserComponent } from './Components/user/user.component';
+import { UserComponent } from './Components/login/user.component';
 import { ForgotMyPasswordComponent } from './shared/components/forgot-my-password/forgot-my-password.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 

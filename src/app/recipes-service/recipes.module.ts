@@ -14,7 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddComponent } from '../Components/add/add.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { UpdateComponent } from '../Components/update/update.component';
-import { UserComponent } from '../Components/user/user.component';
+import { UserComponent } from '../Components/login/user.component';
 import { RegisterComponent } from '../Components/register/register.component';
 
 
