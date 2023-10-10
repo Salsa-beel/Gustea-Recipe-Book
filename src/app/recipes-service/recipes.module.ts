@@ -16,6 +16,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { UpdateComponent } from '../Components/update/update.component';
 import { UserComponent } from '../Components/login/user.component';
 import { RegisterComponent } from '../Components/register/register.component';
+import { ProfileComponent } from '../Components/profile/profile.component';
+import { OAuthModule } from 'angular-oauth2-oidc';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -31,7 +34,8 @@ import { RegisterComponent } from '../Components/register/register.component';
     AddComponent,
     UpdateComponent,
     UserComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
@@ -40,6 +44,8 @@ import { RegisterComponent } from '../Components/register/register.component';
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
+
+
 
 
   ]

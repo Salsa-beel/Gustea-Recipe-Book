@@ -8,6 +8,8 @@ import { RecipesModule } from './recipes-service/recipes.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { HttpClientModule } from '@angular/common/http';
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReactiveFormsModule,
     FormsModule,
     NgxPaginationModule,
+    HttpClientModule,
+    OAuthModule.forRoot(),
+
 
   ],
 
